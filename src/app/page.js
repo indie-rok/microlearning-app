@@ -9,11 +9,14 @@ import {
   Button,
   Space,
   Typography,
+  notification,
 } from "antd";
 import Meta from "antd/es/card/Meta";
 import { useRouter } from "next/navigation";
 
 import styles from "./page.module.css";
+import { useCoinStore } from "./_lib/store";
+import { useState } from "react";
 
 const style = {
   background: "#0092ff",
@@ -22,14 +25,35 @@ const style = {
 
 export default function Home() {
   const { push } = useRouter();
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const increaseCoins = useCoinStore((state) => state.increaseCoins);
+
+  const [api, contextHolder] = notification.useNotification();
+  const openNotificationWithIcon = (type) => {
+    api[type]({
+      message: "Coins added",
+      placement: "bottomRight",
+    });
+  };
+
   return (
     <>
+      {contextHolder}
       <Alert
         message="Congratz on your 10 day streak"
         type="success"
         action={
           <Space direction="vertical">
-            <Button size="small" type="primary">
+            <Button
+              size="small"
+              type="primary"
+              onClick={() => {
+                setIsButtonDisabled(true);
+                increaseCoins(100);
+                openNotificationWithIcon("success");
+              }}
+              disabled={isButtonDisabled}
+            >
               Get my 100 coins
             </Button>
           </Space>
