@@ -1,0 +1,43 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.store {
+  margin-bottom: 20px;
+}
+
+.garden {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gardenRow {
+  display: flex;
+}
+
+.gardenCell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #27ae60;
+  color: white;
+}
+
+.button {
+  margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.disabledButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

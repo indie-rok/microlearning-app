@@ -20,34 +20,8 @@ export default function Sql() {
           <p>Discover this magic word of databases</p>
         </Card>
 
-        <Card
-          title="What are databases?"
-          style={{
-            width: 300,
-            marginBottom: 60,
-          }}
-        >
-          <p>Discover this magic word of databases</p>
-        </Card>
-
-        <Card
-          title="What are databases?"
-          style={{
-            width: 300,
-            marginBottom: 60,
-          }}
-        >
-          <p>Discover this magic word of databases</p>
-        </Card>
-
-        <Card
-          title="What are databases?"
-          style={{
-            width: 300,
-            marginBottom: 60,
-          }}
-        >
-          <p>Discover this magic word of databases</p>
+        <Card style={{ width: 300 }}>
+          <p>More courses coming soon!</p>
         </Card>
       </Flex>
     </div>
