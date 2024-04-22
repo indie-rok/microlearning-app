@@ -13,5 +13,5 @@ export const useGardenStore = create((set) => ({
   grid: Array(5)
     .fill(null)
     .map(() => Array(5).fill(null)),
-  setGrid: (grid) => set((grid) => ({ grid })),
+  setGrid: (newGrid) => set(() => ({ grid: newGrid })),
 }));

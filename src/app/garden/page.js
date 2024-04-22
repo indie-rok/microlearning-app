@@ -4,16 +4,18 @@ import React, { useState } from "react";
 import { Button, Divider, notification } from "antd";
 
 import styles from "./page.module.css";
-import { useCoinStore } from "../_lib/store";
+import { useCoinStore, useGardenStore } from "../_lib/store";
 
 function Garden() {
   const [api, contextColder] = notification.useNotification();
   const decreaseCoins = useCoinStore((state) => state.decreaseCoins);
   const coins = useCoinStore((state) => state.coins);
+  const grid = useGardenStore((state) => state.grid);
+  const setGrid = useGardenStore((state) => state.setGrid);
+
   const initialGrid = Array(5)
     .fill(null)
     .map(() => Array(5).fill(null));
-  const [grid, setGrid] = useState(initialGrid);
 
   const flowers = [
     { id: 1, name: "Rose", cost: 10, color: "#c0392b" },
