@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Layout style={{ height: "100vh" }}>
+        <Layout style={{ minHeight: "100vh" }}>
           <Header style={{ display: "flex", alignItems: "center" }}>
             <div className="demo-logo" />
             <Menu

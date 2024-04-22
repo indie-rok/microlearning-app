@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Divider,
   Row,
@@ -14,14 +15,7 @@ import {
 import Meta from "antd/es/card/Meta";
 import { useRouter } from "next/navigation";
 
-import styles from "./page.module.css";
 import { useCoinStore } from "./_lib/store";
-import { useState } from "react";
-
-const style = {
-  background: "#0092ff",
-  padding: "8px 0",
-};
 
 export default function Home() {
   const { push } = useRouter();
