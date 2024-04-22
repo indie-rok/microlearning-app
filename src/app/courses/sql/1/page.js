@@ -15,6 +15,7 @@ export default function One() {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answersSlide1, setAnswersSlide1] = useState([]);
+  const [disabledButton, setDisabledButton] = useState(false);
   const [words] = useState([
     { id: 1, text: "database table", category: "db" },
     { id: 2, text: "excel sheet", category: "db" },
@@ -36,6 +37,7 @@ export default function One() {
       ) {
         api["success"]({
           message: "Correct",
+          placement: "bottomRight",
         });
         setCorrectAnwerCount(correctAnswerCount + 1);
       } else {
@@ -184,7 +186,9 @@ export default function One() {
                 placement: "bottomRight",
               });
               increaseCoins(correctAnswerCount * 100);
+              setDisabledButton(true);
             }}
+            disabled={disabledButton}
           >
             Get my rewards
           </Button>
@@ -211,7 +215,7 @@ export default function One() {
 
   return (
     <div>
-      <Progress percent={Math.ceil((currentQuestion / slides.length) * 100)} />
+      <Progress percent={Math.ceil((currentQuestion / 3) * 100)} />
 
       <Divider />
       {contextHolder}
